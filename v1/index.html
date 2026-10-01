@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ecosystem Fire · V5 – פרוטוטייפ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Index view -->
+  <main id="index-view" class="index-view" hidden>
+    <header class="index-header">
+      <label class="ver-switch"><span class="ver-lbl">גרסה</span><select onchange="location.href=this.value" aria-label="גרסת פרוטוטייפ"><option value="index.html" selected>v1 · מסכים לחיצים</option><option value="../index.html">v2 · ממשק אינטראקטיבי</option></select></label>
+      <h1>Ecosystem Fire · V5 – פרוטוטייפ</h1>
+      <p class="index-note">פרוטוטייפ לחיץ לבדיקה בלבד · מבוסס צילומי מסך מ-Figma · אינו קוד ייצור</p>
+    </header>
+    <div id="index-groups"></div>
+  </main>
+
+  <!-- Player view -->
+  <section id="player-view" class="player-view" hidden>
+    <div id="stage" class="stage">
+      <img id="screen-img" class="screen-img" alt="" draggable="false">
+      <div id="hotspots" class="hotspots"></div>
+    </div>
+
+    <nav id="chrome" class="chrome" aria-label="שליטה בפרוטוטייפ">
+      <button type="button" id="btn-home" class="chrome-btn" title="חזרה לאינדקס (Esc)">⌂ אינדקס</button>
+      <span id="flow-title" class="chrome-title"></span>
+      <span id="step" class="chrome-step" aria-live="polite"></span>
+      <div id="ab-switch" class="ab-switch" role="radiogroup" aria-label="גרסה" hidden></div>
+      <span class="chrome-spacer"></span>
+      <label class="ver-switch ver-sm"><span class="ver-lbl">גרסה</span><select onchange="location.href=this.value" aria-label="גרסת פרוטוטייפ"><option value="index.html" selected>v1 · מסכים לחיצים</option><option value="../index.html">v2 · ממשק אינטראקטיבי</option></select></label>
+      <button type="button" id="btn-hotspots" class="chrome-btn" aria-pressed="false" title="H">הצג אזורים לחיצים</button>
+      <button type="button" id="btn-prev" class="chrome-btn" title="הקודם (→)">→ הקודם</button>
+      <button type="button" id="btn-next" class="chrome-btn" title="הבא (←)">הבא ←</button>
+    </nav>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </section>
+
+  <script src="flow-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
